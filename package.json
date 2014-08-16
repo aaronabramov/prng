@@ -1,0 +1,25 @@
+{
+  "name": "prng",
+  "version": "0.0.0",
+  "description": "Pseudo randmo number generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dmitriiabramov/prng.git"
+  },
+  "keywords": [
+    "pseudo",
+    "random",
+    "number",
+    "generator"
+  ],
+  "author": "Dmitrii Abramov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dmitriiabramov/prng/issues"
+  },
+  "homepage": "https://github.com/dmitriiabramov/prng"
+}
