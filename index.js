@@ -1,10 +1,11 @@
 var LFSR = require('lfsr'),
-    lfsr = new LFSR(19, 919199424);
+    DEFAULT_SEED = 149304961039362642461;
 
-// log base 2
-
-function PRNG() {
-
+/**
+ * @param {Number} [seed] value for LFSR
+ */
+function PRNG(seed) {
+    this.lfsr = new LFSR(null, seed || DEFAULT_SEED);
 }
 
 PRNG.prototype = {
@@ -32,7 +33,7 @@ PRNG.prototype = {
         var bits = ~~this._log2(max - offset) + 1,
             random;
         do {
-            random = lfsr.seq(bits);
+            random = this.lfsr.seq(bits);
         } while (random > (max - offset));
         return random + offset;
     },
