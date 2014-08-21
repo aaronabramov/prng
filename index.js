@@ -1,11 +1,16 @@
 var LFSR = require('lfsr'),
-    DEFAULT_SEED = 149304961039362642461;
+    DEFAULT_SEED = 149304961039362642461,
+    REGISTER_LENGTH = 31,
+    FLUSH_TIMES = 20;
 
 /**
  * @param {Number} [seed] value for LFSR
  */
 function PRNG(seed) {
-    this.lfsr = new LFSR(null, seed || DEFAULT_SEED);
+    this.lfsr = new LFSR(REGISTER_LENGTH, seed || DEFAULT_SEED);
+    // flush initial state of register because thay may produce
+    // weird sequences
+    this.lfsr.seq(FLUSH_TIMES * REGISTER_LENGTH);
 }
 
 PRNG.prototype = {
