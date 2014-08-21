@@ -1,4 +1,4 @@
-## Seedable pseudo random number generator written in javascript
+### Seedable pseudo random number generator written in javascript
 [![Build Status](https://travis-ci.org/dmitriiabramov/prng.svg?branch=master)](https://travis-ci.org/dmitriiabramov/prng)
 ```javascript
 var PRNG = require('prng'),
